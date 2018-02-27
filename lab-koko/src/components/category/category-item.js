@@ -14,7 +14,7 @@ class CategoryItem extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
   handleDelete() {
-    this.props.dashboardCategoryDelete(this.state);
+    this.props.categoryItemCategoryDelete(this.state);
   }
   render() { 
     return ( 
@@ -25,7 +25,7 @@ class CategoryItem extends React.Component {
         {renderIf(this.state.edit,
           <CategoryForm category={this.props.category} 
           buttonText='Update' 
-          onComplete={this.props.dashboardCategoryUpdate}/>
+          onComplete={this.props.categoryItemCategoryUpdate}/>
         )}
       </div>
      )
@@ -35,8 +35,8 @@ const mapStateToProps = state => ({
   categories: state,
 });
 const mapDispatchToProps = (dispatch, getState) => ({
-  dashboardCategoryUpdate: category => dispatch(categoryUpdate(category)),
-  dashboardCategoryDelete: category => dispatch(categoryDelete(category)),
+  categoryItemCategoryUpdate: category => dispatch(categoryUpdate(category)),
+  categoryItemCategoryDelete: category => dispatch(categoryDelete(category)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryItem);
