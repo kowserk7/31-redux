@@ -11,13 +11,17 @@ class CategoryItem extends React.Component {
     console.log(this.props);
     this.state = this.props.category 
     this.state.edit = false;
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+  handleDelete() {
+    this.props.dashboardCategoryDelete(this.state);
   }
   render() { 
     return ( 
       <div onDoubleClick={() => this.setState({edit: !this.state.edit})}>
-        <h3>{this.state.title}</h3>
-        <p>Budget: ${this.state.budget}</p>
-        <button onClick={this.props.dashboardCategoryDelete}>Delete</button>
+        <h3>{this.props.category.title}</h3>
+        <p>Budget: ${this.props.category.budget}</p>
+        <button id={this.props.category._id} onClick={this.handleDelete}>Delete</button>
         {renderIf(this.state.edit,
           <CategoryForm category={this.props.category} 
           buttonText='Update' 

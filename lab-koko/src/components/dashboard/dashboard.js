@@ -28,8 +28,6 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = (dispatch, getState) => ({
   dashboardCategoryCreate: category => dispatch(categoryCreate(category)),
-  dashboardCategoryUpdate: category => dispatch(categoryUpdate(category)),
-  dashboardCategoryDelete: category => dispatch(categoryDelete(category)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

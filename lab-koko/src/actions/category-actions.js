@@ -8,14 +8,10 @@ export const categoryCreate = category => {
     payload: category,
   };
 };
-export const categoryUpdate = category => {
-  // category._id = uuid();
-  category.timestamp = new Date();
-  return  {
+export const categoryUpdate = category => ({
   type: 'CATEGORY_UPDATE',
   payload: category,
-  };
-};
+});
 export const categoryDelete = category => ({
   type: 'CATEGORY_DELETE',
   payload: category,
