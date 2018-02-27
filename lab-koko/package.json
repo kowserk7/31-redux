@@ -34,9 +34,7 @@
     "url-loader": "^0.6.2",
     "uuid": "^3.2.1",
     "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.1"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^2.11.1",
     "eslint": "^4.18.1"
   },
   "repository": {
@@ -46,5 +44,6 @@
   "bugs": {
     "url": "https://github.com/kowserk7/31-redux/issues"
   },
-  "homepage": "https://github.com/kowserk7/31-redux#readme"
+  "homepage": "https://github.com/kowserk7/31-redux#readme",
+  "dependencies": {}
 }

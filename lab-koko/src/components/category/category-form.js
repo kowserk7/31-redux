@@ -7,17 +7,26 @@ class CategoryForm extends React.Component {
       ? this.props.category
       : {
         title: '',
+        budget: 0,
+        edit: false,
       };
     this.hangdleChange = this.hangdleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   hangdleChange(event) {
-    this.setState({[event.target.name]: event.target.value});
+    this.setState({[event.target.name]: event.target.value,});
   }
-  handleSubmit(event) {
-    event.preventDefault();
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.onComplete(this.state);
+    console.log(this.props);
+    this.setState({
+      title: '',
+      budget: 0,
+      edit: false,
+    });
   }
+
   render() { 
     return ( 
       <form className="category-form" onSubmit={this.handleSubmit}>
@@ -25,8 +34,16 @@ class CategoryForm extends React.Component {
           type="text"
           name="title"
           value={this.state.title}
+          placeholder="Category Title"
           onChange= {this.hangdleChange}
         />
+        <input
+          type="number"
+          name="budget"
+          value={this.state.budget}
+          onChange= {this.hangdleChange}
+        />
+
         <button type="submit">{this.props.buttonText}</button>
       </form>
     );
